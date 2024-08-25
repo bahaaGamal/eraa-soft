@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Create User</h1>
+                        <h1 class="m-0">Create Post</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -33,22 +33,18 @@
                 </div>
             @endif
 
-            <form action="{{ route('users.store') }}" method="POST">
-                @csrf
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" class="form-control" id="name" value="{{old('name')}}">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" class="form-control" id="email" value="{{old('email')}}">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control" id="password" required>
-                </div>
-                <button type="submit" class="btn btn-success">Create</button>
-            </form>
+            <form action="{{ route('posts.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" name="title" class="form-control" id="title" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea name="content" class="form-control" id="content" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Create</button>
+        </form>
                 <!-- /.row -->
             </div><!-- /.container-fluid -->
         </div>

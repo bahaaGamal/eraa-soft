@@ -48,6 +48,8 @@ Route::prefix('admin')->group(function() {
 
   Route::get('/home', [AdminHomeController::class, 'index'])->name('admin.home');
   Route::resource('users', UserController::class);
+  Route::resource('posts', PostController::class);
+
 
 });
 
